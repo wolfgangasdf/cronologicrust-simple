@@ -1,0 +1,25 @@
+[package]
+name = "cronologicrust"
+version = "0.1.0"
+authors = ["Wolfgang Loeffler <wolfgang.loeffler@gmail.com>"]
+edition = "2018"
+build = "build.rs" 
+
+[[bin]]
+name = "cronologicrust"
+path = "src/main.rs"
+
+[[bin]]
+name = "cronologicrust-simple"
+path = "src/main-simple.rs"
+
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+crossbeam = "0.8"
+crossbeam-channel = "0.5"
+crossbeam-deque = "0.8"
+
+[build-dependencies]
+bindgen = "0.58.1" # to generate wrapper files for cronologic headers
